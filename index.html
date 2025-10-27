@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoLearn Hub</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f4f4f4;}
+        header { background:#4CAF50; color:white; padding:20px 0; text-align:center;}
+        nav { background:#333; display:flex; justify-content:center;}
+        nav a { color:white; padding:14px 20px; text-decoration:none; text-transform:uppercase;}
+        nav a:hover { background:#575757;}
+        section { padding:40px 20px; max-width:1200px; margin:auto; background:white; margin-bottom:20px; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.1);}
+        h2 { color:#333; }
+        .project, .course { border:1px solid #ddd; padding:20px; border-radius:8px; margin-bottom:15px;}
+        .quiz { margin-top:20px;}
+        button { background:#4CAF50; color:white; border:none; padding:10px 20px; cursor:pointer; border-radius:5px;}
+        button:hover { background:#45a049;}
+        footer { text-align:center; padding:20px; background:#333; color:white;}
+        #map { width:100%; height:400px; margin-top:20px; border-radius:10px;}
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>EcoLearn Hub</h1>
+    <p>Байгаль орчны мониторинг, AI ба өгөгдөлд суурилсан системийн мэдлэгийг олгох</p>
+</header>
+
+<nav>
+    <a href="#home">Нүүр</a>
+    <a href="#learning">Сургалт</a>
+    <a href="#projects">Төслүүд</a>
+    <a href="#participation">Оролцоо</a>
+    <a href="#resources">Ресурс</a>
+    <a href="#contact">Холбоо</a>
+</nav>
+
+<section id="home">
+    <h2>Нүүр хуудас</h2>
+    <p>Тавтай морил! EcoLearn Hub нь оюутан залуус болон олон нийтэд байгаль орчны мониторинг, AI болон өгөгдөлд суурилсан системийн талаарх мэдлэг олгох, практик төсөл, citizen science үйл ажиллагаанд оролцох боломжийг бүрдүүлдэг платформ юм.</p>
+</section>
+
+<section id="learning">
+    <h2>Сургалт ба семинар</h2>
+    <div class="course">
+        <h3>AI ба Байгаль орчны өгөгдөл</h3>
+        <p>Онлайн сургалт, практик төсөл, кейс судалгааны хичээл.</p>
+    </div>
+    <div class="course">
+        <h3>Өгөгдөлд суурилсан мониторинг</h3>
+        <p>Dron, IoT мэдрэгч, хиймэл дагуул ашигласан төсөл.</p>
+    </div>
+</section>
+
+<section id="projects">
+    <h2>Төслүүд</h2>
+    <div class="project">
+        <h3>Дрон ашиглан ой модын хяналт</h3>
+        <p>Оюутнууд ой модны доройтлыг үнэлэх дрон төсөлд оролцсон.</p>
+    </div>
+    <div class="project">
+        <h3>Citizen Science – Усны чанар</h3>
+        <p>Орон нутгийн иргэдтэй хамтран усны чанарыг судлах төсөл.</p>
+    </div>
+    <div id="map"></div>
+</section>
+
+<section id="participation">
+    <h2>Оролцоо</h2>
+    <p>Төслүүдэд оролцох, байгаль орчны клуб, менторшип, волонтерын бүртгэлд хамрагдах боломжтой.</p>
+    <button onclick="alert('Танд амжилт хүсье! Бүртгэл амжилттай.')">Бүртгүүлэх</button>
+</section>
+
+<section id="resources">
+    <h2>Ресурс ба дэмжлэг</h2>
+    <p>Сургалтын материал, техникийн гарын авлага, санхүүгийн дэмжлэг, өгөгдлийн сангууд.</p>
+</section>
+
+<section id="contact">
+    <h2>Холбоо барих</h2>
+    <p>Email: info@ecolearn.mn | Утас: +976 1234 5678</p>
+</section>
+
+<section class="quiz">
+    <h2>Мэдлэг сорил</h2>
+    <p>AI ба байгаль орчны мониторингтой холбоотой асуултанд хариулаарай:</p>
+    <button onclick="alert('Зөв!')">AI нь байгаль орчны өгөгдлийг анализ хийхэд ашиглагддаг.</button>
+    <button onclick="alert('Буруу!')">AI нь зөвхөн тоглоомонд ашиглагддаг.</button>
+</section>
+
+<footer>
+    <p>&copy; 2025 EcoLearn Hub | Бүх эрх хуулиар хамгаалагдсан</p>
+</footer>
+
+<script>
+    // Интерактив карт (Google Maps API жишээ)
+    function initMap() {
+        const mapOptions = { zoom: 5, center: {lat: 46.8625, lng: 103.8467} };
+        const map = new google.maps.Map(document.getElementById('map'), mapOptions);
+        const marker = new google.maps.Marker({ position: {lat: 47.919, lng: 106.917}, map: map, title: 'Улаанбаатар дахь төсөл' });
+    }
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
+
+</body>
+</html>
